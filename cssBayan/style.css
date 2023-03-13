@@ -146,7 +146,8 @@
    */
   
   img {
-    border-style: none;
+      max-width: 100%;
+      display: block;
   }
   
   /* Forms
@@ -357,68 +358,129 @@
   }
   
   .wrapper {
-    max-width: 1920px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
   .header {
-    max-width: 1000px;
-    margin: 20px auto;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 0 0 10px;
   }
   .memes {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 800px;
     color:rgb(52, 52, 160);
+    margin: 0 auto;
   }
 
   .memes:hover {
     color: #000;
   }
 
+  .memes-title {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 10px 20px;
+    position: relative;
+  }
+
+  .memes-title::after {
+    content: '';
+    display: iinline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    position: absolute;
+    margin-left: 70%;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
   .memes-item {
+    max-width: 700px;
+    margin: 0 auto;
     border-top: 2px solid grey;
   }
 
-  .memes-title {
-    display: block;
-    cursor: pointer;
-    padding: 10px 20px;
+  .memes-input {
+    display: none;
   }
 
+  .memes-input:checked + .memes-title::after {
+  content: '';
+  display: iinline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #972121;
+  position: absolute;
+  margin-left: 70%;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
-  .memes-input {
-    appearance: none;
-    position: absolute;
-    width: 0;
-    height: 0;
+
+  memes-title::before {
+    content: '445';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #000;
   }
 
   .memes-text {
-    max-width: 60%;
+    max-width: 800px;
     height: 0;
     overflow: hidden;
-    padding: 0 20px;
+    transition: 0.5s;
     cursor: pointer;
   }
   .mem-image {
-    max-width: 40%;
-    max-height: 50%;
-    margin: 0 auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    max-height: 300px;
   }
+
   .memes-item:active {
     color: rgb(82, 82, 214);
   }
 
-  .memes-input:checked + .memes-text {
+  .memes-input:checked + .memes-text{
     height: auto;
+    padding: 10px 0;
+    opacity: 1;
   }
-
 
   .memes-input:hover + .memes-text{
     height: auto;
-    transition: 1s;
+    transition: smooth 1s;
     overflow: visible;
     padding: 5px 20px;
+    opacity: 1;
   }
 
+  .memes-input {
 
+  }
+
+  @media (max-width: 1110px) {
+    body {
+      font-size: 0.8rem;
+      font-weight: 700;
+      background-color: rgb(236, 236, 233);
+      color: blueviolet;
+    }
+  }
+
+  @media (max-width: 568px) {
+    body {
+      font-size: 0.5rem;
+      font-weight: 700;
+      background-color: rgb(206, 206, 175);
+      color: blueviolet;
+    }
+  }
