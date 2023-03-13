@@ -408,18 +408,7 @@
     display: none;
   }
 
-  .memes-input:checked + .memes-title::after {
-  content: '';
-  display: iinline-block;
-  width: 10px;
-  height: 10px;
-  background-color: #972121;
-  position: absolute;
-  margin-left: 70%;
-  margin-right: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
+
 
 
   memes-title::before {
@@ -449,10 +438,23 @@
     color: rgb(82, 82, 214);
   }
 
-  .memes-input:checked + .memes-text{
+  .memes-input:checked ~ .memes-text{
     height: auto;
     padding: 10px 0;
     opacity: 1;
+  }
+
+  .memes-title ~ .memes-input:checked::after {
+    content: '';
+    display: iinline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #972121;
+    position: absolute;
+    margin-left: 70%;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .memes-input:hover + .memes-text{
@@ -484,3 +486,4 @@
       color: blueviolet;
     }
   }
+  
